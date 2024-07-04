@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Press Start 2P", sans-serif;
+  color: #eee;
+  font-size: 70%;
+  background-color: #222;
+  /* background-color: #9def7f; */
+}
+
+/* Layout */
+header {
+  border-bottom: #eee solid 7px;
+  position: relative;
+  width: 100%;
+  height: 35vh;
+}
+main {
+  color: #eee;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.left {
+  width: 52rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.right {
+  width: 52rem;
+  font-size: 1.5rem;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+/* Element Styling */
+.between {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  font-size: 1.5rem;
+}
+h1 {
+  position: absolute;
+  /* align-items: center; */
+  font-size: 2rem;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.number {
+  background-color: #eee;
+  color: #222;
+  font-size: 5rem;
+  width: 10rem;
+  /* height: 0.5em; */
+  text-align: center;
+  padding: 2rem 0rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn {
+  background-color: #eee;
+  border: none;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  font-family: inherit;
+}
+.again {
+  border: none;
+  position: absolute;
+  left: 2rem;
+  top: 1rem;
+}
+.guess {
+  background: transparent;
+  border: 5px solid #eee;
+  font-size: 3rem;
+  color: #eee;
+  font-family: inherit;
+  text-align: center;
+  width: 15rem;
+  height: 6rem;
+  margin-bottom: 3rem;
+}
+.message {
+  font-size: 1.5rem;
+  margin-bottom: 6rem;
+}
+.lable-score {
+  margin-bottom: 2rem;
+}
+.btn:hover {
+  background-color: #ccc;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .left,
+  .right {
+    width: 45rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .left,
+  .right {
+    width: 40rem;
+  }
+
+  .guess {
+    width: 13rem;
+    height: 5rem;
+    font-size: 2.5rem;
+  }
+
+  .number {
+    font-size: 4rem;
+    width: 8rem;
+    padding: 1.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 30vh;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .guess {
+    width: 12rem;
+    height: 4.5rem;
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
+
+  .number {
+    font-size: 3.5rem;
+    width: 7rem;
+    padding: 1rem 0;
+  }
+
+  .btn {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .message {
+    font-size: 1rem;
+    margin: 2rem;
+  }
+
+  .lable-score,
+  .lable-highscore {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .between,
+  .again {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .guess {
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.8rem;
+  }
+
+  .number {
+    font-size: 3rem;
+    width: 6rem;
+    padding: 0.8rem 0;
+  }
+
+  .btn {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .between,
+  .again {
+    font-size: 0.8rem;
+  }
+
+  .lable-score,
+  .lable-highscore {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .guess {
+    width: 8rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+
+  .number {
+    font-size: 2.5rem;
+    width: 5rem;
+    padding: 0.5rem 0;
+  }
+
+  .btn {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .between,
+  .again {
+    font-size: 0.7rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .between,
+  .again {
+    font-size: 0.6rem;
+  }
+}
