@@ -10,7 +10,7 @@ body {
   color: #eee;
   font-size: 70%;
   background-color: #222;
-  /* background-color: #9def7f; */
+  background-color: #b8f7a1;
 }
 
 /* Layout */
@@ -103,6 +103,7 @@ h1 {
 }
 .btn:hover {
   background-color: #ccc;
+  cursor: pointer;
 }
 
 /* Responsive styles */
@@ -218,7 +219,7 @@ h1 {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
   .guess {
     width: 8rem;
     height: 3.5rem;
