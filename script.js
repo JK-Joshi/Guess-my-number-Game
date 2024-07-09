@@ -24,6 +24,7 @@ const myFunction = () => {
   document.querySelector(".guess").style.color = "#eee";
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   // document.querySelector(".number").textContent = secretNumber;
+  score = 20;
   inputField.value = "";
   inputField.focus();
 };
