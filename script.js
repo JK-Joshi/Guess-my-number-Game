@@ -1,5 +1,9 @@
 "use strict";
 
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+// const input = document.getElementById("guess");
+// const chkBtn = document.querySelector(".check");
+
 // document.querySelector(".message").textContent = "🎉 Correct Number";
 
 // document.querySelector(".number").textContent = 13;
@@ -9,25 +13,41 @@ const inputField = document.querySelector(".guess");
 
 const myFunction = () => {
   // alert("its Working");
-  score = 20;
   let highSocre = localStorage.getItem("HIGH_SCORE") || 0;
   document.querySelector(".score").textContent = score;
   document.querySelector(".message").textContent = "Start guessing...";
   document.querySelector(".highscore").innerHTML = highSocre;
   document.querySelector(".number").textContent = "?";
-  inputField.value = "0";
   document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector("body").style.color = "#eee";
   document.querySelector("main").style.color = "#eee";
   document.querySelector(".guess").style.color = "#eee";
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  // document.querySelector(".number").textContent = secretNumber;
+  score = 20;
+  inputField.value = "";
   inputField.focus();
 };
 
+//handle check Button on Enter Key Press
+let input = document.getElementById("guess");
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+});
+
+//Handle Reset Again on Esc key press
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    e.preventDefault();
+    document.getElementById("again").click();
+  }
+});
+
 let body = document.getElementsByTagName("body")[0];
 window.addEventListener("DOMContentLoaded", myFunction, false);
-
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
-// document.querySelector(".number").textContent = secretNumber;
 
 const handleCheck = () => {
   const guess = Number(document.querySelector(".guess").value);
@@ -42,19 +62,20 @@ const handleCheck = () => {
   else if (guess === secretNumber) {
     localStorage.setItem("HIGH_SCORE", score);
     document.querySelector(".message").textContent = "🎉 Correct Number";
-    document.querySelector("body").style.backgroundColor = "#b8f7a1";
+    document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector("body").style.color = "#222";
     document.querySelector("main").style.color = "#222";
     document.querySelector(".guess").style.color = "#222";
     document.querySelector(".highscore").innerHTML = score;
     document.querySelector(".number").textContent = guess;
+    inputField.value = "";
     inputField.focus();
   }
 
   //When Number us too High
   else if (guess > secretNumber) {
     if (score > 1) {
-      document.querySelector(".message").textContent = "📈 Number is Too High!";
+      document.querySelector(".message").textContent = "📈 Too High!";
       score--;
       document.querySelector(".score").textContent = score;
     } else {
@@ -68,7 +89,7 @@ const handleCheck = () => {
   //When Number is too Low
   else if (guess < secretNumber) {
     if (score > 1) {
-      document.querySelector(".message").textContent = "📉 Number is Too Low!";
+      document.querySelector(".message").textContent = "📉 Too Low!";
       score--;
       document.querySelector(".score").textContent = score;
     } else {

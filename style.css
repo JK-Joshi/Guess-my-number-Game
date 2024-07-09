@@ -42,6 +42,11 @@ main {
 }
 
 /* Element Styling */
+.esc {
+  position: absolute;
+  top: 6rem;
+  left: 2rem;
+}
 .between {
   position: absolute;
   right: 2rem;
@@ -76,6 +81,7 @@ h1 {
   font-size: 1.5rem;
   padding: 1.5rem;
   font-family: inherit;
+  margin-bottom: 10px;
 }
 .again {
   border: none;
