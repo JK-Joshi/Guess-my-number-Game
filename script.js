@@ -14,7 +14,7 @@ const inputField = document.querySelector(".guess");
 const myFunction = () => {
   // alert("its Working");
   let highSocre = localStorage.getItem("HIGH_SCORE") || 0;
-  document.querySelector(".score").textContent = score;
+  document.querySelector(".score").textContent = 20;
   document.querySelector(".message").textContent = "Start guessing...";
   document.querySelector(".highscore").innerHTML = highSocre;
   document.querySelector(".number").textContent = "?";
@@ -24,7 +24,6 @@ const myFunction = () => {
   document.querySelector(".guess").style.color = "#eee";
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   // document.querySelector(".number").textContent = secretNumber;
-  score = 20;
   inputField.value = "";
   inputField.focus();
 };
